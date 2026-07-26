@@ -91,12 +91,6 @@
 			"to_port": 0
 		},
 		{
-			"from": "math_5",
-			"from_port": 0,
-			"to": "Material",
-			"to_port": 7
-		},
-		{
 			"from": "gaussian_blur",
 			"from_port": 0,
 			"to": "transform2",
@@ -137,6 +131,30 @@
 			"from_port": 0,
 			"to": "Material",
 			"to_port": 0
+		},
+		{
+			"from": "math_5",
+			"from_port": 0,
+			"to": "invert",
+			"to_port": 0
+		},
+		{
+			"from": "invert",
+			"from_port": 0,
+			"to": "bevel",
+			"to_port": 0
+		},
+		{
+			"from": "bevel",
+			"from_port": 0,
+			"to": "invert_2",
+			"to_port": 0
+		},
+		{
+			"from": "invert_2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 7
 		}
 	],
 	"label": "Graph",
@@ -150,12 +168,12 @@
 		{
 			"export_last_target": "Unreal/Unreal Engine 5",
 			"export_paths": {
-				"Unreal/Unreal Engine 5": "C:/Users/camm/Projects/ict-gamejam-summer-2026-unreal/IctGameJam2026 5.6/Content/Materials/M_Fence_2"
+				"Unreal/Unreal Engine 5": "C:/Users/camm/OneDrive/Documents/jam_temp/material/M_Fence_2"
 			},
 			"name": "Material",
 			"node_position": {
-				"x": 1576.94165039063,
-				"y": 596.682250976563
+				"x": 1898.23266601563,
+				"y": 536.062255859375
 			},
 			"parameters": {
 				"albedo_color": {
@@ -433,381 +451,10 @@
 			"type": "gaussian_blur"
 		},
 		{
-			"connections": [
-				{
-					"from": "uniform_2",
-					"from_port": 0,
-					"to": "gen_outputs",
-					"to_port": 3
-				},
-				{
-					"from": "uniform_greyscale_3_2",
-					"from_port": 0,
-					"to": "combine",
-					"to_port": 0
-				},
-				{
-					"from": "uniform_greyscale_3",
-					"from_port": 0,
-					"to": "combine",
-					"to_port": 1
-				},
-				{
-					"from": "uniform_greyscale_4",
-					"from_port": 0,
-					"to": "combine",
-					"to_port": 2
-				},
-				{
-					"from": "uniform_3",
-					"from_port": 0,
-					"to": "gen_outputs",
-					"to_port": 0
-				},
-				{
-					"from": "combine",
-					"from_port": 0,
-					"to": "gen_outputs",
-					"to_port": 1
-				},
-				{
-					"from": "uniform",
-					"from_port": 0,
-					"to": "gen_outputs",
-					"to_port": 2
-				}
-			],
-			"label": "Metal",
-			"longdesc": "",
-			"name": "graph_2_2",
-			"node_position": {
-				"x": 751.856750488281,
-				"y": 1022.90899658203
-			},
-			"nodes": [
-				{
-					"name": "uniform_greyscale_3_2",
-					"node_position": {
-						"x": -712.322692871094,
-						"y": -216.486419677734
-					},
-					"parameters": {
-						"color": 1.0
-					},
-					"seed": 36576.0,
-					"type": "uniform_greyscale"
-				},
-				{
-					"name": "uniform_greyscale_4",
-					"node_position": {
-						"x": -712.322692871094,
-						"y": -114.486419677734
-					},
-					"parameters": {
-						"color": 1.0
-					},
-					"seed": 36422.0,
-					"type": "uniform_greyscale"
-				},
-				{
-					"name": "uniform_greyscale_3",
-					"node_position": {
-						"x": -712.322692871094,
-						"y": -165.486419677734
-					},
-					"parameters": {
-						"color": 0.1
-					},
-					"seed": 36499.0,
-					"type": "uniform_greyscale"
-				},
-				{
-					"name": "uniform_2",
-					"node_position": {
-						"x": -674.908142089844,
-						"y": -0.333068996667862
-					},
-					"parameters": {
-						"color": {
-							"a": 1.0,
-							"b": 0.0,
-							"g": 0.50196099281311,
-							"r": 0.50196099281311,
-							"type": "Color"
-						}
-					},
-					"seed": -61342.0,
-					"type": "uniform"
-				},
-				{
-					"name": "uniform_3",
-					"node_position": {
-						"x": -676.322692871094,
-						"y": -271.486419677734
-					},
-					"parameters": {
-						"color": {
-							"a": 1.0,
-							"b": 0.579999983310699,
-							"g": 0.569999992847443,
-							"r": 0.560000002384186,
-							"type": "Color"
-						}
-					},
-					"seed": 11477.0,
-					"type": "uniform"
-				},
-				{
-					"name": "combine",
-					"node_position": {
-						"x": -514.322692871094,
-						"y": -176.486419677734
-					},
-					"parameters": {},
-					"seed": 31890.0,
-					"type": "combine"
-				},
-				{
-					"name": "gen_inputs",
-					"node_position": {
-						"x": -847.322692871094,
-						"y": -143.585464477539
-					},
-					"parameters": {},
-					"ports": [],
-					"seed": 63262.0,
-					"type": "ios"
-				},
-				{
-					"name": "gen_outputs",
-					"node_position": {
-						"x": -206.322692871094,
-						"y": -144.585464477539
-					},
-					"parameters": {},
-					"ports": [
-						{
-							"group_size": 4.0,
-							"name": "Albedo",
-							"type": "rgb"
-						},
-						{
-							"name": "ORM",
-							"type": "rgb"
-						},
-						{
-							"name": "Emission",
-							"type": "rgb"
-						},
-						{
-							"name": "Normal",
-							"type": "rgb"
-						}
-					],
-					"seed": 2686.0,
-					"type": "ios"
-				},
-				{
-					"name": "gen_parameters",
-					"node_position": {
-						"x": -739.302490234375,
-						"y": -408.925567626953
-					},
-					"parameters": {
-						"param0": 5,
-						"param1": 0.1
-					},
-					"seed": 55275.0,
-					"type": "remote",
-					"widgets": [
-						{
-							"configurations": {
-								"Aluminum": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.925,
-											"g": 0.921,
-											"r": 0.913,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Chromium": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.554,
-											"g": 0.556,
-											"r": 0.55,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Cobalt": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.634,
-											"g": 0.655,
-											"r": 0.662,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Copper": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.538,
-											"g": 0.637,
-											"r": 0.955,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Gold": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.336,
-											"g": 0.766,
-											"r": 1.0,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Iron": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.58,
-											"g": 0.57,
-											"r": 0.56,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Nickel": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.526,
-											"g": 0.609,
-											"r": 0.66,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Platinum": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.585,
-											"g": 0.637,
-											"r": 0.672,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Silver": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.915,
-											"g": 0.96,
-											"r": 0.972,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Titanium": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.449,
-											"g": 0.497,
-											"r": 0.542,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								]
-							},
-							"label": "Metal",
-							"linked_widgets": [
-								{
-									"node": "uniform_3",
-									"widget": "color"
-								}
-							],
-							"name": "param0",
-							"type": "config_control"
-						},
-						{
-							"label": "Roughness",
-							"linked_widgets": [
-								{
-									"node": "uniform_greyscale_3",
-									"widget": "color"
-								}
-							],
-							"name": "param1",
-							"type": "linked_control"
-						}
-					]
-				},
-				{
-					"name": "uniform",
-					"node_position": {
-						"x": -673.802490234375,
-						"y": -56.4255676269531
-					},
-					"parameters": {
-						"color": {
-							"a": 1.0,
-							"b": 0.0,
-							"g": 0.0,
-							"r": 0.0,
-							"type": "Color"
-						}
-					},
-					"seed": 53321.0,
-					"type": "uniform"
-				}
-			],
-			"parameters": {
-				"param0": 5,
-				"param1": 0.1
-			},
-			"seed_int": 0,
-			"shortdesc": "",
-			"type": "graph"
-		},
-		{
 			"name": "normal_map2",
 			"node_position": {
-				"x": 924.556701660156,
-				"y": 575.208984375
+				"x": 1003.08575439453,
+				"y": 537.940979003906
 			},
 			"parameters": {
 				"buffer": 1.0,
@@ -821,8 +468,8 @@
 		{
 			"name": "fbm4_2",
 			"node_position": {
-				"x": 1030.15673828125,
-				"y": 1149.40905761719
+				"x": 1055.44580078125,
+				"y": 1184.01501464844
 			},
 			"parameters": {
 				"folds": 0.0,
@@ -840,8 +487,8 @@
 		{
 			"name": "math_5",
 			"node_position": {
-				"x": 1083.23718261719,
-				"y": 920.9345703125
+				"x": 1072.58923339844,
+				"y": 869.025573730469
 			},
 			"parameters": {
 				"clamp": false,
@@ -855,8 +502,8 @@
 		{
 			"name": "gaussian_blur_2",
 			"node_position": {
-				"x": 1303.93627929688,
-				"y": 1007.72503662109
+				"x": 1373.14819335938,
+				"y": 963.802062988281
 			},
 			"parameters": {
 				"param0": 11,
@@ -951,10 +598,60 @@
 			},
 			"seed_int": 0,
 			"type": "uniform"
+		},
+		{
+			"name": "bevel",
+			"node_position": {
+				"x": 1560.41186523438,
+				"y": 869.500610351563
+			},
+			"parameters": {
+				"bevel": {
+					"points": [
+						{
+							"ls": 0.0,
+							"rs": 1.0,
+							"x": 0.0,
+							"y": 0.0
+						},
+						{
+							"ls": 1.0,
+							"rs": 0.0,
+							"x": 1.0,
+							"y": 1.0
+						}
+					],
+					"type": "Curve"
+				},
+				"distance": 0.018,
+				"size": 11
+			},
+			"seed_int": 0,
+			"type": "bevel"
+		},
+		{
+			"name": "invert",
+			"node_position": {
+				"x": 1297.45812988281,
+				"y": 768.080505371094
+			},
+			"parameters": {},
+			"seed_int": 0,
+			"type": "invert"
+		},
+		{
+			"name": "invert_2",
+			"node_position": {
+				"x": 1877.45825195313,
+				"y": 994.080444335938
+			},
+			"parameters": {},
+			"seed_int": 0,
+			"type": "invert"
 		}
 	],
 	"parameters": {},
-	"project_thumbnail": "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",
+	"project_thumbnail": "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",
 	"seed_int": 0,
 	"shortdesc": "",
 	"type": "graph"
