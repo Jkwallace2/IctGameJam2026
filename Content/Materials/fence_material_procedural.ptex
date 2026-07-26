@@ -91,12 +91,6 @@
 			"to_port": 0
 		},
 		{
-			"from": "math_5",
-			"from_port": 0,
-			"to": "Material",
-			"to_port": 7
-		},
-		{
 			"from": "gaussian_blur",
 			"from_port": 0,
 			"to": "transform2",
@@ -137,6 +131,18 @@
 			"from_port": 0,
 			"to": "Material",
 			"to_port": 0
+		},
+		{
+			"from": "math_5",
+			"from_port": 0,
+			"to": "bevel",
+			"to_port": 0
+		},
+		{
+			"from": "bevel",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 7
 		}
 	],
 	"label": "Graph",
@@ -150,12 +156,12 @@
 		{
 			"export_last_target": "Unreal/Unreal Engine 5",
 			"export_paths": {
-				"Unreal/Unreal Engine 5": "C:/Users/camm/Projects/ict-gamejam-summer-2026-unreal/IctGameJam2026 5.6/Content/Materials/M_Fence_2"
+				"Unreal/Unreal Engine 5": "C:/Users/camm/OneDrive/Documents/jam_temp/material/M_Fence_2"
 			},
 			"name": "Material",
 			"node_position": {
-				"x": 1576.94165039063,
-				"y": 596.682250976563
+				"x": 1898.23266601563,
+				"y": 536.062255859375
 			},
 			"parameters": {
 				"albedo_color": {
@@ -433,381 +439,10 @@
 			"type": "gaussian_blur"
 		},
 		{
-			"connections": [
-				{
-					"from": "uniform_2",
-					"from_port": 0,
-					"to": "gen_outputs",
-					"to_port": 3
-				},
-				{
-					"from": "uniform_greyscale_3_2",
-					"from_port": 0,
-					"to": "combine",
-					"to_port": 0
-				},
-				{
-					"from": "uniform_greyscale_3",
-					"from_port": 0,
-					"to": "combine",
-					"to_port": 1
-				},
-				{
-					"from": "uniform_greyscale_4",
-					"from_port": 0,
-					"to": "combine",
-					"to_port": 2
-				},
-				{
-					"from": "uniform_3",
-					"from_port": 0,
-					"to": "gen_outputs",
-					"to_port": 0
-				},
-				{
-					"from": "combine",
-					"from_port": 0,
-					"to": "gen_outputs",
-					"to_port": 1
-				},
-				{
-					"from": "uniform",
-					"from_port": 0,
-					"to": "gen_outputs",
-					"to_port": 2
-				}
-			],
-			"label": "Metal",
-			"longdesc": "",
-			"name": "graph_2_2",
-			"node_position": {
-				"x": 751.856750488281,
-				"y": 1022.90899658203
-			},
-			"nodes": [
-				{
-					"name": "uniform_greyscale_3_2",
-					"node_position": {
-						"x": -712.322692871094,
-						"y": -216.486419677734
-					},
-					"parameters": {
-						"color": 1.0
-					},
-					"seed": 36576.0,
-					"type": "uniform_greyscale"
-				},
-				{
-					"name": "uniform_greyscale_4",
-					"node_position": {
-						"x": -712.322692871094,
-						"y": -114.486419677734
-					},
-					"parameters": {
-						"color": 1.0
-					},
-					"seed": 36422.0,
-					"type": "uniform_greyscale"
-				},
-				{
-					"name": "uniform_greyscale_3",
-					"node_position": {
-						"x": -712.322692871094,
-						"y": -165.486419677734
-					},
-					"parameters": {
-						"color": 0.1
-					},
-					"seed": 36499.0,
-					"type": "uniform_greyscale"
-				},
-				{
-					"name": "uniform_2",
-					"node_position": {
-						"x": -674.908142089844,
-						"y": -0.333068996667862
-					},
-					"parameters": {
-						"color": {
-							"a": 1.0,
-							"b": 0.0,
-							"g": 0.50196099281311,
-							"r": 0.50196099281311,
-							"type": "Color"
-						}
-					},
-					"seed": -61342.0,
-					"type": "uniform"
-				},
-				{
-					"name": "uniform_3",
-					"node_position": {
-						"x": -676.322692871094,
-						"y": -271.486419677734
-					},
-					"parameters": {
-						"color": {
-							"a": 1.0,
-							"b": 0.579999983310699,
-							"g": 0.569999992847443,
-							"r": 0.560000002384186,
-							"type": "Color"
-						}
-					},
-					"seed": 11477.0,
-					"type": "uniform"
-				},
-				{
-					"name": "combine",
-					"node_position": {
-						"x": -514.322692871094,
-						"y": -176.486419677734
-					},
-					"parameters": {},
-					"seed": 31890.0,
-					"type": "combine"
-				},
-				{
-					"name": "gen_inputs",
-					"node_position": {
-						"x": -847.322692871094,
-						"y": -143.585464477539
-					},
-					"parameters": {},
-					"ports": [],
-					"seed": 63262.0,
-					"type": "ios"
-				},
-				{
-					"name": "gen_outputs",
-					"node_position": {
-						"x": -206.322692871094,
-						"y": -144.585464477539
-					},
-					"parameters": {},
-					"ports": [
-						{
-							"group_size": 4.0,
-							"name": "Albedo",
-							"type": "rgb"
-						},
-						{
-							"name": "ORM",
-							"type": "rgb"
-						},
-						{
-							"name": "Emission",
-							"type": "rgb"
-						},
-						{
-							"name": "Normal",
-							"type": "rgb"
-						}
-					],
-					"seed": 2686.0,
-					"type": "ios"
-				},
-				{
-					"name": "gen_parameters",
-					"node_position": {
-						"x": -739.302490234375,
-						"y": -408.925567626953
-					},
-					"parameters": {
-						"param0": 5,
-						"param1": 0.1
-					},
-					"seed": 55275.0,
-					"type": "remote",
-					"widgets": [
-						{
-							"configurations": {
-								"Aluminum": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.925,
-											"g": 0.921,
-											"r": 0.913,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Chromium": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.554,
-											"g": 0.556,
-											"r": 0.55,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Cobalt": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.634,
-											"g": 0.655,
-											"r": 0.662,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Copper": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.538,
-											"g": 0.637,
-											"r": 0.955,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Gold": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.336,
-											"g": 0.766,
-											"r": 1.0,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Iron": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.58,
-											"g": 0.57,
-											"r": 0.56,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Nickel": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.526,
-											"g": 0.609,
-											"r": 0.66,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Platinum": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.585,
-											"g": 0.637,
-											"r": 0.672,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Silver": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.915,
-											"g": 0.96,
-											"r": 0.972,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								],
-								"Titanium": [
-									{
-										"node": "uniform_3",
-										"value": {
-											"a": 1.0,
-											"b": 0.449,
-											"g": 0.497,
-											"r": 0.542,
-											"type": "Color"
-										},
-										"widget": "color"
-									}
-								]
-							},
-							"label": "Metal",
-							"linked_widgets": [
-								{
-									"node": "uniform_3",
-									"widget": "color"
-								}
-							],
-							"name": "param0",
-							"type": "config_control"
-						},
-						{
-							"label": "Roughness",
-							"linked_widgets": [
-								{
-									"node": "uniform_greyscale_3",
-									"widget": "color"
-								}
-							],
-							"name": "param1",
-							"type": "linked_control"
-						}
-					]
-				},
-				{
-					"name": "uniform",
-					"node_position": {
-						"x": -673.802490234375,
-						"y": -56.4255676269531
-					},
-					"parameters": {
-						"color": {
-							"a": 1.0,
-							"b": 0.0,
-							"g": 0.0,
-							"r": 0.0,
-							"type": "Color"
-						}
-					},
-					"seed": 53321.0,
-					"type": "uniform"
-				}
-			],
-			"parameters": {
-				"param0": 5,
-				"param1": 0.1
-			},
-			"seed_int": 0,
-			"shortdesc": "",
-			"type": "graph"
-		},
-		{
 			"name": "normal_map2",
 			"node_position": {
-				"x": 924.556701660156,
-				"y": 575.208984375
+				"x": 1003.08575439453,
+				"y": 537.940979003906
 			},
 			"parameters": {
 				"buffer": 1.0,
@@ -821,8 +456,8 @@
 		{
 			"name": "fbm4_2",
 			"node_position": {
-				"x": 1030.15673828125,
-				"y": 1149.40905761719
+				"x": 1055.44580078125,
+				"y": 1184.01501464844
 			},
 			"parameters": {
 				"folds": 0.0,
@@ -840,8 +475,8 @@
 		{
 			"name": "math_5",
 			"node_position": {
-				"x": 1083.23718261719,
-				"y": 920.9345703125
+				"x": 1072.58923339844,
+				"y": 869.025573730469
 			},
 			"parameters": {
 				"clamp": false,
@@ -855,8 +490,8 @@
 		{
 			"name": "gaussian_blur_2",
 			"node_position": {
-				"x": 1303.93627929688,
-				"y": 1007.72503662109
+				"x": 1373.14819335938,
+				"y": 963.802062988281
 			},
 			"parameters": {
 				"param0": 11,
@@ -951,10 +586,40 @@
 			},
 			"seed_int": 0,
 			"type": "uniform"
+		},
+		{
+			"name": "bevel",
+			"node_position": {
+				"x": 1777.41186523438,
+				"y": 960.500610351563
+			},
+			"parameters": {
+				"bevel": {
+					"points": [
+						{
+							"ls": 0.0,
+							"rs": -1.0,
+							"x": 0.0,
+							"y": 1.0
+						},
+						{
+							"ls": -1.0,
+							"rs": 0.0,
+							"x": 1.0,
+							"y": 0.0
+						}
+					],
+					"type": "Curve"
+				},
+				"distance": 0.018,
+				"size": 11
+			},
+			"seed_int": 0,
+			"type": "bevel"
 		}
 	],
 	"parameters": {},
-	"project_thumbnail": "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",
+	"project_thumbnail": "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",
 	"seed_int": 0,
 	"shortdesc": "",
 	"type": "graph"
