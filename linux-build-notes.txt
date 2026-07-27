@@ -1,0 +1,24 @@
+Able to run the editor on NixOS fine using https://github.com/Adrastie/NixOSUnreal to set up the FHS, but it seemed unable to hand off jobs to the build tools properly
+I was able to get the build running from the same env
+
+I also had to patch RunUAT's hashbang to /usr/bin/env bash instead of /bin/bash but later the build still failed with some hardcoded /bin/bash execution attempt so I just sudo ln -s <which bash output> /bin/bash to make it work for now
+
+with env variables:
+export UE_ROOT=<Unreal root, directory above Engine/, Samples/ etc
+export PROJECT=".../.../ICgamejam2026.uproject"
+export OUTPUT=<desired output dir>
+
+run this to get the build going
+
+"$UE_ROOT/Engine/Build/BatchFiles/RunUAT.sh" BuildCookRun \
+  -project="$PROJECT" \
+  -noP4 \
+  -targetplatform=Linux \
+  -clientconfig=Development \
+  -build \
+  -cook \
+  -stage \
+  -package \
+  -archive \
+  -archivedirectory="$OUTPUT" \
+  -verbose 2>&1 | tee /tmp/ue-buildcookrun.log
